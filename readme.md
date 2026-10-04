@@ -59,3 +59,21 @@ class ModelName(str, Enum):
 # pour recuperer ce valeur on fait
 ```
 model_name.value ou your_enum_member.value
+
+## query parameters
+y a certain parametre qui sont directement traité par fastapi comme de requete
+
+```py
+async def read_item(skip: int = 0, limi: int=10)
+```
+on peut aussi declarer de parameters optionnel (non -obligatoire ) en leurs donnant une valeur par defaut None
+```py
+async def read_item(item_id:str, q: str| None=None)
+```
+on peut aussi faire de parametre de requete multiplie
+
+```py
+@app.get("/users/{user_id}/items/{item_id}")
+```
+
+le parametre no 
